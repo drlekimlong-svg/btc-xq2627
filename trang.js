@@ -109,7 +109,7 @@
       else if (HN >= bd) con = 'Đang diễn ra';
       else { var n = cach(HN, bd); con = n === 1 ? 'Ngày mai' : 'Còn ' + n + ' ngày'; }
       h += '<li class="' + (m.chot ? 'chot' : 'du-kien') + '"><span class="ngay">' + esc(m.ngay) + '</span>' +
-        '<span class="viec-moc">' + esc(m.viec) + ' <span class="phu nho">· ' + (m.chot ? 'đã có lịch' : 'dự kiến, chờ Ban Điều hành xác nhận') + '</span></span>' +
+        '<span class="viec-moc">' + esc(m.viec) + ' <span class="phu nho">· ' + (m.chot ? 'đã có lịch' : 'dự kiến') + '</span></span>' +
         '<span class="con">' + con + '</span></li>';
     });
     h += '</ul></section>';
@@ -167,8 +167,7 @@
       '<div class="hang"><label class="chon-an"><input type="checkbox" id="an-xong"' + (an ? ' checked' : '') + '> Ẩn giai đoạn đã xong</label>' +
       '<button type="button" class="nut" data-hanh-dong="in">In checklist</button>' +
       '<button type="button" class="nut" data-hanh-dong="xoa" data-ban="' + b.id + '">Bỏ hết dấu tick</button></div>' +
-      '<p class="ghi-chu">Dấu tick lưu trong trình duyệt của máy này, người khác không thấy. Đổi máy hoặc xóa dữ liệu duyệt web thì mất dấu tick. ' +
-      'Ngày ghi “Dự kiến” là mốc tính theo lịch chung, chờ Ban Điều hành xác nhận.</p></div>';
+      '<p class="ghi-chu">Dấu tick lưu trong trình duyệt của máy này, người khác không thấy. Đổi máy hoặc xóa dữ liệu duyệt web thì mất dấu tick.</p></div>';
     if (b.checklist.ghi_chu_html) h += b.checklist.ghi_chu_html;
     b.checklist.giai_doan.forEach(function (g) { h += theGd(g, b); });
     h += '<p class="ghi-chu" style="margin-top:16px">Cách làm từng việc, cách kiểm và xử lý sự cố: <a href="#/' + b.id + '/huong-dan">' +
